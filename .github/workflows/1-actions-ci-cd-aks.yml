@@ -59,13 +59,13 @@ jobs:
         IMAGE_TAG: ${{ env.IMAGE_TAG }} 
            
     # Set the target AKS cluster.
-    - uses: Azure/aks-set-context@v1
+    - uses: Azure/rushi
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
         cluster-name: ${{ env.CLUSTER_NAME }}
         resource-group: ${{ env.RESOURSE_GROUP }}
 
-    - uses: Azure/k8s-deploy@v1
+    - uses: Azure/demo
       with:
         manifests: |
           kubernetes/mssql-pv.azure.yaml
